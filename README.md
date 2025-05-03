@@ -8,9 +8,9 @@ A common and effective strategy is to wrap the trained model within an API. This
 ## Model Storage
 When preparing a trained model for production environment, it is standard practice to save it, typically using a binary format. This is driven by some key advantages:
 
-- Efficiency: Binary formats are compact for storing large numerical weights, and significantly faster to load.
+- **Efficiency:** Binary formats are compact for storing large numerical weights, and significantly faster to load.
 
-- Compatibility: Machine learning frameworks like PyTorch TensorFlow, and Scikit-Learn provide built-in ways to save (serialize) and load (deserialize) the models utilizinf optimized binary formats like .pt, .h5 and .joblib. 
+- **Compatibility:** Machine learning frameworks like PyTorch TensorFlow, and Scikit-Learn provide built-in ways to save (serialize) and load (deserialize) the models utilizinf optimized binary formats like .pt, .h5 and .joblib. 
 
 
 ## The Scope of Model Loading
