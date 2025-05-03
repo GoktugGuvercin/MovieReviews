@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        h1 {
+            margin-bottom: 50px; /* Add space below header */
+        }
+        .button-container {
+            display: flex;
+            gap: 20px; /* Spacing between buttons */
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px; /* Rounded corners like the image */
+            color: white;
+            text-decoration: none; /* Remove underline from links */
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+        }
+        .button-example {
+            background-color: #4A90E2; /* Blue */
+        }
+        .button-predict {
+            background-color: #7ED321; /* Green */
+        }
+        .button-model {
+            background-color: #BD10E0; /* Reddish/Brownish in image -> Using a distinct color */
+             /* Adjusting color based on image */
+            background-color: #BF3A3A; /* Brownish Red */
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Movie Reviews App</h1>
+
+    <div class="button-container">
+        <a href="/example-reviews" class="button button-example">Example Reviews</a>
+        <a href="/predict-form" class="button button-predict">Predict</a>
+        <a href="https://huggingface.co/goktug14/bert_imdb" class="button button-model">Let's see model</a>
+    </div>
+
+</body>
+</html>

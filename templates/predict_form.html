@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Movie Review Sentiment</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content */
+            padding: 30px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        form {
+            width: 80%;
+            max-width: 600px; /* Limit form width */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align form items left */
+            gap: 10px; /* Space between form elements */
+        }
+        label {
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%; /* Make textarea fill form width */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding/border in width */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+            border-radius: 20px; /* Rounded button */
+            cursor: pointer;
+            font-size: 1em;
+            align-self: flex-start; /* Align button left */
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: 80%;
+            max-width: 600px;
+        }
+        .result h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Let's Analyze Movie Review</h1>
+
+    {% if pred_label %}
+    <div class="result">
+        <h2>Prediction Result:</h2>
+        <p><strong>Original Review:</strong></p>
+        <p><em>{{ review }}</em></p>
+        <p><strong>Sentiment: {{ pred_label }}</strong></p>
+        <p><strong>Score:</strong> {{ pred_score }}</p>
+    </div>
+    <hr style="width: 80%; max-width: 600px; margin: 20px 0;">
+    {% endif %}
+
+    <form action="/predict" method="post">
+        <label for="review_text">Type your review:</label>
+        <textarea id="review_text" name="review" rows="8" required placeholder="e.g., This movie was absolutely fantastic!"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p style="margin-top: 30px;"><a href="/">Back to Home</a></p>
+
+</body>
+</html>
