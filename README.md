@@ -32,5 +32,5 @@ def read_root(request: Request):
 
 Jinja2Templates enable us to create a template engine, by `directory="templates"` we tell FastAPI to look for HTML templates inside that folder located in same directory as this python script. In the function `read_root()`, we have `response_class=HTMLResponse` to specify that the purpose of this function is to create, render and return HTML content. The core part is to return `templates.TemplateResponse()`, which handles the rendering. The dictionary that we pass while calling `TemplateResponse()` for rendering refers to the context, every key in this dictionary becomes a variable in the templates. In that way, we can pass data from python code into templates. We always need to include `"request": request` in this dictionary because it is used to generate URLs and access request data if needed:
 
-    - You can write url inside your HTML (`<a href="{{ request.url_for('predict_form_page') }}">Predict Form</a>`)
-    - You can show current path query parameters and cookies in template via `{{ request.url.path }}`` and `{{ request.query_params.page }}`
+    - You can write url inside your HTML: <a href="{{ request.url_for('predict_form_page') }}">Predict Form</a>`
+    - You can show current path query parameters and cookies in template via {{ request.url.path }} and {{ request.query_params.page }}
